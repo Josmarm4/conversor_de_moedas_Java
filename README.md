@@ -23,8 +23,7 @@ Este projeto é um conversor de moedas desenvolvido em Java que utiliza a [Excha
 
 Antes de rodar o projeto, você precisa ter instalado:
 
-- [Java JDK 17](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html)
-- [Maven](https://maven.apache.org/)
+- [Java JDK 21](https://www.oracle.com/java/technologies/javase/jdk21-archive-downloads.html)
 - Conexão com a internet
 - Chave de API gratuita da [ExchangeRate API](https://www.exchangerate-api.com/)
 
@@ -36,7 +35,26 @@ Antes de rodar o projeto, você precisa ter instalado:
    git clone https://github.com/seu-usuario/conversor-moedas-java.git
    cd conversor-moedas-java
    ```
+2. Substitua a chave da API no arquivo CurrencyApiClient.java
+   ```
+   private static final String API_KEY = "SUA_CHAVE_AQUI";
+   ```
+3. Compile os arquivos (certifique-se de que gson.jar está na mesma pasta):
 
+  ```bash
+  javac -cp gson-2.10.1.jar *.java
+  ```
+4. Execute a aplicação:
+   ```bash
+   java -cp .:gson-2.10.1.jar CurrencyConverterApp
+   ```
+   
+   OBS: no Windows use ; em vez de : no classpath:
+   
+   ```
+   java -cp .;gson-2.10.1.jar CurrencyConverterApp
+   ```
+   
 # 💡 Como usar
 - Ao iniciar, o programa exibe um menu com opções de conversão.
 
@@ -47,9 +65,7 @@ Antes de rodar o projeto, você precisa ter instalado:
 - Os dados da conversão são salvos como JSON na pasta data.
 
 # 🧰 Tecnologias utilizadas
-- Java 17
-
-- Maven
+- Java 21
 
 - ExchangeRate API
 
